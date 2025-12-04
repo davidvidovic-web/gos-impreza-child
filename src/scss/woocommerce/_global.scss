@@ -1,0 +1,65 @@
+/**
+ * WooCommerce Global Styles
+ */
+@use '../variables' as *;
+
+// Order items table
+#woocommerce-order-items {
+  .woocommerce_order_items_wrapper {
+    table.woocommerce_order_items,
+    table.display_meta,
+    table.meta {
+      tr th {
+        width: fit-content !important;
+      }
+    }
+  }
+}
+
+// Cart table product name styling
+.woocommerce-cart-form__contents {
+  .product-name {
+    font-size: $font-size-base;
+    font-weight: 400;
+    color: var(--color-content-text, $text-color);
+    line-height: 1.5;
+
+    // Style direct text nodes before wcpa_cart_meta list to match product links
+    > a {
+      color: var(--color-content-heading, $text-color);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: var(--color-main, $primary-color);
+      }
+    }
+
+    // When product name appears as text (not a link) before wcpa_cart_meta
+    // Make it match the link styling
+    .wcpa_cart_meta {
+      margin-top: $spacing-md;
+    }
+  }
+}
+
+// Cart & Checkout - Product names without links should match linked products
+.woocommerce-cart-form,
+.woocommerce-checkout-review-order {
+  .product-name {
+    // Ensure consistent font styling for all product names
+    font-size: $font-size-base;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+// Hide images for Amelia bookings in checkout review order
+.woocommerce-checkout-review-order {
+  .cart_item:has(.wcpa_cart_meta) {
+    .checkout-col-left {
+      display: none;
+    }
+  }
+}

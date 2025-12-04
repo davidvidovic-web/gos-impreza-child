@@ -1,0 +1,17 @@
+/**
+ * Main SCSS Entry Point
+ * Compiles to dist/css/main.min.css
+ */
+
+// Variables
+@use 'variables' as *;
+
+// Base styles
+@use 'base/reset';
+@use 'base/typography';
+
+// WooCommerce global styles
+@use 'woocommerce/global';
+
+// Components loaded globally
+// (Component-specific styles are loaded conditionally via webpack entries)

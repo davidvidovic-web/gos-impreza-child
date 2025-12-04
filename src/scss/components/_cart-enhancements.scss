@@ -1,0 +1,157 @@
+/**
+ * Cart & Checkout Enhancements
+ * Custom fields and addons display styling
+ */
+@use "../variables" as *;
+
+/* Collapsible Custom Fields and Addons Groups */
+.gos-custom-fields-group,
+.gos-addons-group {
+  margin: $spacing-lg 0 0 0;
+  padding: 0;
+
+  .gos-group-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $font-size-base;
+    font-weight: 500;
+    color: $primary-color;
+    margin: 0;
+    padding: $spacing-xs $spacing-sm;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    background: transparent;
+    cursor: pointer;
+    transition: all $transition-fast;
+    user-select: none;
+
+    &:hover {
+      background: $background-light;
+      border-color: $border-color-hover;
+    }
+
+    &::after {
+      content: "▼";
+      font-size: 10px;
+      transition: transform $transition-fast;
+      margin-left: $spacing-xs;
+      opacity: 0.6;
+    }
+
+    &.collapsed::after {
+      transform: rotate(-90deg);
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm $spacing-md;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
+      margin-top 0.3s ease-out;
+    opacity: 1;
+    margin-top: $spacing-sm;
+    padding: 0 15px;
+
+    &.collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-top: 0;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      gap: $spacing-xs;
+
+      .gos-field-label,
+      .gos-addon-name {
+        font-weight: 400;
+        color: $secondary-color;
+        flex-shrink: 0;
+      }
+
+      .gos-field-value,
+      .gos-addon-name {
+        color: $text-color;
+        flex: 1;
+      }
+
+      .gos-field-price,
+      .gos-addon-price,
+      .gos-field-value {
+        color: $primary-color;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .gos-addon-qty {
+        color: $secondary-color;
+        font-weight: 400;
+      }
+    }
+  }
+
+  + .gos-addons-group {
+    margin-top: $spacing-xl;
+  }
+}
+
+/* WCPA Integration */
+.wcpa_cart_meta {
+  .gos-custom-fields-group,
+  .gos-addons-group {
+    margin-top: $spacing-md;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  li:has(.gos-custom-fields-group) .wcpa_cart_meta_item-label,
+  li:has(.gos-addons-group) .wcpa_cart_meta_item-label {
+    display: none !important;
+  }
+
+  .wcpa_cart_meta_item {
+    flex-direction: column;
+  }
+}
+
+/* Order Details Page */
+.woocommerce-order-details {
+  .gos-custom-fields-group,
+  .gos-addons-group {
+    margin: $spacing-md 0;
+
+    .gos-group-title {
+      font-size: $font-size-base;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      font-size: $font-size-small;
+    }
+  }
+}
+
+/* Cart & Checkout Pages */
+.woocommerce-cart-form,
+.woocommerce-checkout-review-order {
+  .gos-custom-fields-group ul,
+  .gos-addons-group ul {
+    width: 100%;
+  }
+}
+
+#page-content .woocommerce-checkout-review-order-table tr.cart_item > td {
+  padding: 15px 0 !important;
+}

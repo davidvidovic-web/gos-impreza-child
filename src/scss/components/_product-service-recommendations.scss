@@ -1,0 +1,311 @@
+/**
+ * Product Service Recommendations
+ * Matches mini cart service recommendations style
+ */
+@use '../variables' as *;
+
+.product-service-recommendation {
+  margin: $spacing-xl 0;
+  padding: $spacing-xl;
+  background: var(--color-content-bg-alt, $gray-light);
+  border-radius: $border-radius-md;
+  padding-top: 30px !important
+}
+
+.service-rec-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-md;
+  gap: $spacing-xs;
+}
+
+.service-rec-title {
+  font-weight: 400;
+  font-size: $font-size-large;
+  color: rgba(51, 63, 72, 1);
+}
+
+.service-rec-subtitle {
+  font-size: $spacing-lg;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: rgba(51, 63, 72, 1);
+}
+
+.service-rec-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm + 4px;
+}
+
+.service-rec-item {
+  background: var(--color-content-bg, $white);
+  padding: $font-size-base - 1px $spacing-md;
+  border-radius: $border-radius-sm;
+  transition: all $transition-fast;
+  border: 1px solid var(--color-content-border, #e0e0e0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-sm;
+
+  &:hover {
+    border-color: rgba(141, 69, 252, 0.3);
+  }
+}
+
+.service-rec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-md;
+  width: 100%;
+}
+
+.service-rec-name {
+  font-weight: 400;
+  font-size: $font-size-large;
+  color: rgba(51, 63, 72, 1);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.service-rec-price {
+  font-weight: 400;
+  font-size: $font-size-large;
+  color: rgba(51, 63, 72, 1);
+  white-space: nowrap;
+}
+
+.service-rec-actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.service-rec-add-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: $font-size-base;
+  font-weight: 400;
+  color: rgba(141, 69, 252, 1);
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity $transition-fast;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+
+  &:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    text-decoration: none;
+  }
+}
+
+// Loading spinner for service widget
+.service-loading-spinner {
+  display: inline-block;
+  width: $font-size-base;
+  height: $font-size-base;
+  border: 2px solid rgba(141, 69, 252, 0.2);
+  border-top-color: rgba(141, 69, 252, 1);
+  border-radius: 50%;
+  animation: service-spinner-rotate $transition-slow linear infinite;
+}
+
+@keyframes service-spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.product-service-recommendation {
+  padding: $spacing-md;
+}
+
+.service-rec-card {
+  background: $gray-light;
+  border-radius: $border-radius-md;
+  padding: $spacing-xl;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow $transition-base;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.service-rec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $spacing-lg;
+  font-size: $font-size-small + 1px;
+  font-weight: 500;
+  margin-bottom: $spacing-md;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.service-rec-content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.service-rec-header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm + 4px;
+}
+
+.service-rec-title {
+  font-size: $spacing-lg;
+  font-weight: 600;
+  color: $text-color;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.service-rec-meta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.service-rec-price {
+  font-size: $spacing-xl;
+  font-weight: 700;
+  color: $primary-color;
+
+  .woocommerce-Price-amount {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+  }
+}
+
+.service-rec-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs + 2px;
+  font-size: $font-size-base;
+  color: $secondary-color;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.service-rec-description {
+  color: $secondary-color;
+  font-size: $font-size-base;
+  line-height: 1.6;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.service-rec-actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+  margin-top: $spacing-sm;
+}
+
+.service-rec-book-btn {
+  background: $primary-color !important;
+  color: $white !important;
+  border: none !important;
+  padding: $spacing-sm + 4px $spacing-xxl !important;
+  border-radius: $spacing-xs + 2px !important;
+  font-size: $font-size-large !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: all $transition-base !important;
+  text-decoration: none !important;
+  display: inline-block;
+
+  &:hover {
+    background: #2a0d4a !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 17, 94, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.service-rec-learn-more {
+  color: $primary-color;
+  font-size: $font-size-base;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color $transition-fast;
+
+  &:hover {
+    border-bottom-color: $primary-color;
+  }
+}
+
+/* Responsive adjustments */
+@include respond-to(mobile) {
+  .service-rec-card {
+    padding: $spacing-lg;
+  }
+
+  .service-rec-title {
+    font-size: $font-size-large + 2px;
+  }
+
+  .service-rec-price {
+    font-size: $spacing-lg;
+  }
+
+  .service-rec-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .service-rec-book-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Elementor Editor Styles */
+.elementor-widget .product-service-recommendation {
+  margin: 0;
+}
+
+.elementor-alert {
+  padding: $spacing-md;
+  margin-bottom: $spacing-lg;
+  border-radius: $border-radius-sm;
+
+  &-info {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    color: #1976d2;
+  }
+}

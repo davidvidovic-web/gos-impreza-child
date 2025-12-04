@@ -1,0 +1,196 @@
+#woocommerce-order-items
+  .woocommerce_order_items_wrapper
+  table.woocommerce_order_items
+  table.display_meta
+  tr
+  th,
+#woocommerce-order-items
+  .woocommerce_order_items_wrapper
+  table.woocommerce_order_items
+  table.meta
+  tr
+  th {
+  width: fit-content !important;
+}
+
+/* ============================================
+   Cart & Checkout Enhancements
+   Custom fields and addons display styling
+   Moved from gos-service-location-check plugin
+   ============================================ */
+
+/* Collapsible Custom Fields and Addons Groups */
+.gos-custom-fields-group,
+.gos-addons-group {
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+.gos-custom-fields-group .gos-group-title,
+.gos-addons-group .gos-group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+  color: #36115e;
+  margin: 0;
+  padding: 4px 8px;
+  border: 1px solid rgba(54, 17, 94, 0.2);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.gos-custom-fields-group .gos-group-title:hover,
+.gos-addons-group .gos-group-title:hover {
+  background: rgba(54, 17, 94, 0.05);
+  border-color: rgba(54, 17, 94, 0.4);
+}
+
+.gos-custom-fields-group .gos-group-title::after,
+.gos-addons-group .gos-group-title::after {
+  content: "▼";
+  font-size: 10px;
+  transition: transform 0.2s ease;
+  margin-left: 4px;
+  opacity: 0.6;
+}
+
+.gos-custom-fields-group .gos-group-title.collapsed::after,
+.gos-addons-group .gos-group-title.collapsed::after {
+  transform: rotate(-90deg);
+}
+
+.gos-custom-fields-group ul,
+.gos-addons-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px 16px;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
+    margin-top 0.3s ease-out;
+  opacity: 1;
+  margin-top: 8px;
+  padding: 0 15px;
+}
+
+.gos-custom-fields-group ul.collapsed,
+.gos-addons-group ul.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.gos-custom-fields-group ul li,
+.gos-addons-group ul li {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  gap: 4px;
+}
+
+.gos-custom-fields-group ul li .gos-field-label,
+.gos-custom-fields-group ul li .gos-addon-name,
+.gos-addons-group ul li .gos-field-label,
+.gos-addons-group ul li .gos-addon-name {
+  font-weight: 500;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.gos-custom-fields-group ul li .gos-field-value,
+.gos-custom-fields-group ul li .gos-addon-name,
+.gos-addons-group ul li .gos-field-value,
+.gos-addons-group ul li .gos-addon-name {
+  color: #23282d;
+  flex: 1;
+}
+
+.gos-custom-fields-group ul li .gos-field-price,
+.gos-custom-fields-group ul li .gos-addon-price,
+.gos-custom-fields-group ul li .gos-field-value,
+.gos-addons-group ul li .gos-field-price,
+.gos-addons-group ul li .gos-addon-price,
+.gos-addons-group ul li .gos-field-value {
+  color: #36115e;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gos-custom-fields-group ul li .gos-addon-qty,
+.gos-addons-group ul li .gos-addon-qty {
+  color: #666;
+  font-weight: 400;
+}
+
+.gos-custom-fields-group + .gos-addons-group {
+  margin-top: 24px;
+}
+
+/* WCPA Integration */
+.wcpa_cart_meta .gos-custom-fields-group,
+.wcpa_cart_meta .gos-addons-group {
+  margin-top: 16px;
+}
+
+.wcpa_cart_meta .gos-custom-fields-group:first-child,
+.wcpa_cart_meta .gos-addons-group:first-child {
+  margin-top: 0;
+}
+
+.wcpa_cart_meta li:has(.gos-custom-fields-group) .wcpa_cart_meta_item-label,
+.wcpa_cart_meta li:has(.gos-addons-group) .wcpa_cart_meta_item-label {
+  display: none !important;
+}
+
+/* Order Details Page */
+.woocommerce-order-details .gos-custom-fields-group,
+.woocommerce-order-details .gos-addons-group {
+  margin: 16px 0;
+}
+
+.woocommerce-order-details .gos-custom-fields-group .gos-group-title,
+.woocommerce-order-details .gos-addons-group .gos-group-title {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.woocommerce-order-details .gos-custom-fields-group ul li,
+.woocommerce-order-details .gos-addons-group ul li {
+  font-size: 12px;
+}
+
+/* Cart & Checkout Pages */
+.woocommerce-cart-form .gos-custom-fields-group ul,
+.woocommerce-cart-form .gos-addons-group ul,
+.woocommerce-checkout-review-order .gos-custom-fields-group ul,
+.woocommerce-checkout-review-order .gos-addons-group ul {
+  width: 100%;
+}
+
+.wcpa_cart_meta .wcpa_cart_meta_item {
+  flex-direction: column;
+}
+
+/* Add spacing between cart meta items in checkout */
+#order_review > table > tbody > tr > td.product-name > ul.wcpa_cart_meta > li.wcpa_cart_meta_item {
+  margin-bottom: 15px;
+}
+
+/* Specifically target the first item (Appointment Info) for extra spacing */
+#order_review > table > tbody > tr > td.product-name > ul.wcpa_cart_meta > li.wcpa_cart_meta_item:first-child {
+  margin-bottom: 15px;
+}
+
+/* Remove bottom margin from the last item to avoid extra space */
+#order_review > table > tbody > tr > td.product-name > ul.wcpa_cart_meta > li.wcpa_cart_meta_item:last-child {
+  margin-bottom: 0;
+}

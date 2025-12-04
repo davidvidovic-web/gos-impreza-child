@@ -1,0 +1,185 @@
+/**
+ * Product Service Recommendations Styles
+ */
+
+.product-service-recommendation {
+  margin: 30px 0;
+  padding: 0;
+}
+
+.service-rec-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.service-rec-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.service-rec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.service-rec-badge svg {
+  flex-shrink: 0;
+}
+
+.service-rec-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-rec-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-rec-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #23282d;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.service-rec-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.service-rec-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #36115e;
+}
+
+.service-rec-price .woocommerce-Price-amount {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.service-rec-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+.service-rec-duration svg {
+  flex-shrink: 0;
+}
+
+.service-rec-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.service-rec-description p:last-child {
+  margin-bottom: 0;
+}
+
+.service-rec-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.service-rec-book-btn {
+  background: #36115e !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 12px 32px !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.service-rec-book-btn:hover {
+  background: #2a0d4a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(54, 17, 94, 0.3);
+}
+
+.service-rec-book-btn:active {
+  transform: translateY(0);
+}
+
+.service-rec-learn-more {
+  color: #36115e;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.service-rec-learn-more:hover {
+  border-bottom-color: #36115e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-rec-card {
+    padding: 20px;
+  }
+
+  .service-rec-title {
+    font-size: 18px;
+  }
+
+  .service-rec-price {
+    font-size: 20px;
+  }
+
+  .service-rec-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .service-rec-book-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Elementor Editor Styles */
+.elementor-widget .product-service-recommendation {
+  margin: 0;
+}
+
+.elementor-alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.elementor-alert-info {
+  background-color: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  color: #1976d2;
+}
