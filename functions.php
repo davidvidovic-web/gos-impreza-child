@@ -1125,3 +1125,19 @@ function impreza_child_ensure_email_meta_cleaned($order)
 	// Nothing to do here - just ensuring the hook priority is set correctly
 	// so our filters run before the email content is generated
 }
+
+/**
+ * Allow quantity changes for Amelia booking products in cart
+ * By default, Amelia sets bookings as "sold individually" which hides the quantity input
+ */
+add_filter('woocommerce_is_sold_individually', 'impreza_child_enable_amelia_quantity', 10, 2);
+function impreza_child_enable_amelia_quantity($is_sold_individually, $product)
+{
+	// Check if this is an Amelia booking product
+	// You can identify Amelia products by their meta or product type
+	// If you want to enable quantity for all Amelia bookings, return false
+	
+	// For now, we'll allow quantity changes for all products
+	// You can add conditions here if you only want specific products
+	return false; // false = allow quantity changes
+}
